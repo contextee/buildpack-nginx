@@ -81,6 +81,7 @@ cp -r sigil "$BUILD_DIR/sigil/"
 
 cd "nginx-${NGINX_VERSION}"
 if [[ ! -f "${CACHE_DIR}/bin/nginx" ]]; then
+  ls
   ls ../${BROTLI_DIR}
   echo "-----> Compiling static nginx binary"
   mkdir "$BUILD_DIR/nginx"
