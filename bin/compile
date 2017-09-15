@@ -98,7 +98,7 @@ if [[ ! -f "${CACHE_DIR}/bin/nginx" ]]; then
     --with-http_gzip_static_module \
     --with-file-aio \
     --with-zlib=../zlib-${ZLIB_VERSION} \
-    --add-module=$CACHE_DIR/${BROTLI_DIR} \
+    --add-module=../${BROTLI_DIR} \
     --with-pcre \
     --with-cc-opt="-O2 -static -static-libgcc" \
     --without-http_charset_module \
