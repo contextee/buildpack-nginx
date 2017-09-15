@@ -11,8 +11,7 @@ SIGIL_TARBALL="sigil_${SIGIL_VERSION}_Linux_x86_64.tgz"
 ZLIB_VERSION="1.2.11"
 ZLIB_TARBALL="zlib-${ZLIB_VERSION}.tar.gz"
 BROTLI_COMMIT="bfd2885b2da4d763fed18f49216bb935223cd34b"
-BROTLI_DIR="ngx_brotli-${BROTLI_COMMIT}"
-BROTLI_TARBALL="${BROTLI_DIR}.zip"
+BROTLI_DIR="ngx_brotli"
 
 suppress() {
   # shellcheck disable=SC2069
@@ -64,10 +63,10 @@ if [[ ! -d "${ZLIB_TARBALL%.tar.gz}" ]]; then
   tar xzf "${ZLIB_TARBALL}" && rm -rf "${ZLIB_TARBALL}"
 fi
 
-if [[ ! -d "${BROTLI_TARBALL%.zip}" ]]; then
+if [[ ! -d "ngx_brotli" ]]; then
   echo "-----> Download brotli"
-  git clone --recursive https://github.com/google/ngx_brotli.git
-	cd ngx_brotli
+  git clone --recursive https://github.com/google/ngx_brotli.git $BROTLI_DIR
+	cd $BROTLI_DIR
 	git checkout -b $BROTLI_COMMIT $BROTLI_COMMIT
   git submodule update --init
   cd "../"
