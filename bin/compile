@@ -32,7 +32,6 @@ if [[ ! -e "${BUILD_DIR}/www" ]]; then
   mkdir -p "${CACHE_DIR}/www"
 
   # shellcheck disable=SC2086
-  mv $BUILD_DIR/* "${CACHE_DIR}/www"
   mkdir -p "${BUILD_DIR}/www"
 
   # shellcheck disable=SC2086
