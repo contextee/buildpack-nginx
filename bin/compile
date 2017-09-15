@@ -11,7 +11,7 @@ SIGIL_TARBALL="sigil_${SIGIL_VERSION}_Linux_x86_64.tgz"
 ZLIB_VERSION="1.2.11"
 ZLIB_TARBALL="zlib-${ZLIB_VERSION}.tar.gz"
 BROTLI_COMMIT="bfd2885b2da4d763fed18f49216bb935223cd34b"
-BROTLI_DIR="nginx_brotli-${BROTLI_COMMIT}"
+BROTLI_DIR="ngx_brotli-${BROTLI_COMMIT}"
 BROTLI_TARBALL="${BROTLI_DIR}.zip"
 
 suppress() {
@@ -81,8 +81,6 @@ cp -r sigil "$BUILD_DIR/sigil/"
 
 cd "nginx-${NGINX_VERSION}"
 if [[ ! -f "${CACHE_DIR}/bin/nginx" ]]; then
-  ls ../
-  ls ../${BROTLI_DIR}
   echo "-----> Compiling static nginx binary"
   mkdir "$BUILD_DIR/nginx"
   suppress ./configure \
