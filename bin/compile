@@ -65,10 +65,10 @@ if [[ ! -d "${ZLIB_TARBALL%.tar.gz}" ]]; then
 fi
 
 if [[ ! -d "${BROTLI_TARBALL%.zip}" ]]; then
-  echo "-----> Download and unzip brotli"
-  curl -sSL "https://github.com/google/ngx_brotli/archive/${BROTLI_COMMIT}.zip" -o "${BROTLI_TARBALL}"
-  unzip -qq "${BROTLI_TARBALL}" && rm -rf "${BROTLI_TARBALL}"
-  cd "${BROTLI_DIR}"
+  echo "-----> Download brotli"
+  git clone --recursive https://github.com/google/ngx_brotli.git
+	cd ngx_brotli
+	git checkout -b $BROTLI_COMMIT $BROTLI_COMMIT
   git submodule update --init
   cd "../"
 fi
