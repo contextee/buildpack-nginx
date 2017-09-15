@@ -70,7 +70,7 @@ fi
 if [[ ! -d "${BROTLI_TARBALL%.zip}" ]]; then
   echo "-----> Download and unzip brotli"
   curl -sSL "https://github.com/google/ngx_brotli/archive/${BROTLI_COMMIT}.zip" -o "${BROTLI_TARBALL}"
-  unzip "${BROTLI_TARBALL}" -d "${BROTLI_DIR}" && rm -rf "${BROTLI_TARBALL}"
+  unzip -qq "${BROTLI_TARBALL}" -d "${BROTLI_DIR}" && rm -rf "${BROTLI_TARBALL}"
 fi
 
 if [[ ! -f "sigil" ]]; then
@@ -98,7 +98,7 @@ if [[ ! -f "${CACHE_DIR}/bin/nginx" ]]; then
     --with-http_gzip_static_module \
     --with-file-aio \
     --with-zlib=../zlib-${ZLIB_VERSION} \
-    --add-module=../${BROTLI_DIR} \
+    --add-module=$CACHE_DIR/${BROTLI_DIR} \
     --with-pcre \
     --with-cc-opt="-O2 -static -static-libgcc" \
     --without-http_charset_module \
