@@ -73,7 +73,7 @@ if [[ ! -d "${BROTLI_TARBALL%.zip}" ]]; then
   curl -sSL "https://github.com/google/ngx_brotli/archive/${BROTLI_COMMIT}.zip" -o "${BROTLI_TARBALL}"
   unzip -qq "${BROTLI_TARBALL}" && rm -rf "${BROTLI_TARBALL}"
   ls ./
-  ls "${BROTLI_DIR}"
+  ls "./${BROTLI_DIR}"
 fi
 
 if [[ ! -f "sigil" ]]; then
