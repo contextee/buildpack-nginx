@@ -70,7 +70,7 @@ fi
 if [[ ! -d "${BROTLI_TARBALL%.zip}" ]]; then
   echo "-----> Download and unzip brotli"
   curl -sSL "https://github.com/google/ngx_brotli/archive/${BROTLI_COMMIT}.zip" -o "${BROTLI_TARBALL}"
-  unzip -qq "${BROTLI_TARBALL}" -d "${BROTLI_DIR}" && rm -rf "${BROTLI_TARBALL}"
+  unzip -qq "${BROTLI_TARBALL}" && rm -rf "${BROTLI_TARBALL}"
 fi
 
 if [[ ! -f "sigil" ]]; then
