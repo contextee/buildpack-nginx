@@ -24,7 +24,7 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 CUR_DIR=$(cd "$(dirname "$0")"; cd ..; pwd)
 
-rm -rf "$CACHE_DIR"
+rm -rf "$CACHE_DIR/*"
 mkdir -p "$BUILD_DIR" "$CACHE_DIR"
 
 if [[ ! -e "${BUILD_DIR}/www" ]]; then
