@@ -45,6 +45,8 @@ if [[ ! -e "${BUILD_DIR}/www" ]]; then
   [[ -f "${BUILD_DIR}/www/CHECKS" ]] && mv "${BUILD_DIR}/www/CHECKS" "${BUILD_DIR}"
   [[ -f "${BUILD_DIR}/www/app.json" ]] && mv "${BUILD_DIR}/www/app.json" "${BUILD_DIR}"
   [[ -f "${BUILD_DIR}/www/circle.yml" ]] && mv "${BUILD_DIR}/www/circle.yml" "${BUILD_DIR}"
+  [[ -f "${BUILD_DIR}/www/docker-compose.yml" ]] && mv "${BUILD_DIR}/www/docker-compose.yml" "${BUILD_DIR}"
+  [[ -f "${BUILD_DIR}/www/docker-compose-nginx.conf" ]] && mv "${BUILD_DIR}/www/docker-compose-nginx.conf" "${BUILD_DIR}"
   rm -rf "${CACHE_DIR}/www"
 fi
 
